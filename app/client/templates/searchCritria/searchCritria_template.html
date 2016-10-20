@@ -1,0 +1,17 @@
+<template name='searchCritria'>
+	{{#ionView}}
+    	{{#ionContent}}
+				<div class="searchCritria">
+					<div class="addpadding" style="background-color:#1A1A1A;" ></div>
+					<a class="titlelk" href="{{pathFor 'searchIndex'}}"  ><button class="title">{{type}}</button></a>
+					<div class="ItemContainer">
+						{{#each typeItem}}
+							<div class="ItemContainer-item {{active @index}}" data-id={{@index}} data-typevalue="{{getLang}}" >{{getLang}}</div>
+						{{/each}}
+					</div>
+				</div>
+
+
+			{{/ionContent}}
+  {{/ionView}}
+</template>

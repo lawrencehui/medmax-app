@@ -1,0 +1,32 @@
+<template name='settings'>
+
+	{{#contentFor "headerTitle"}}
+	 <h1 class="title">{{i18n 'Settings'}}</h1>
+	{{/contentFor}}
+
+	{{#ionView}}
+		{{#ionContent}}
+			<div class="list">
+				<div class="item item-divider">
+    			{{i18n 'Languages'}}
+  			</div>
+				<div data-lang="en" class="lang item  item-icon-right">
+					{{i18n 'English'}}
+					{{#if lang 'en' }}
+						<i class=" icon fa fa-check" style="color:#66BCD5; font-size:19px;"></i>
+					{{/if}}
+				</div>
+				<div data-lang="zh" class="lang item item-icon-right">
+					{{i18n 'Chinese'}}
+					{{#if lang 'zh' }}
+					<i class=" icon fa fa-check" style="color:#66BCD5; font-size:19px;"></i>
+					{{/if}}
+				</div>
+
+
+
+			</div>
+		{{/ionContent}}
+	{{/ionView}}
+
+</template>

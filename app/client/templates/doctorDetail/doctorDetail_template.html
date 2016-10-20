@@ -1,0 +1,155 @@
+<template name='doctorDetail'>
+	{{#contentFor "headerButtonLeft"}}
+	 {{>ionNavBackButton }}
+ 	{{/contentFor}}
+
+	{{#contentFor "headerButtonRight"}}
+	 <button class="star btn-{{star}} buttons button button-clear pull-right"><i class="fa {{star}}"></i></button>
+ 	{{/contentFor}}
+
+
+	{{#ionView}}
+		{{#ionContent}}
+			<div class="doctorDetail">
+				{{#with DoctorInfo}}
+					<div class="baseInfoContainer">
+						<div class="av">
+							<img src="/doctor_{{gender}}.png" style="width:96px" alt="">
+							<i class="fa {{getGender}}" style="color:#333"></i>
+						</div>
+						<div>{{en_name}}</div>
+						<div>{{zh_name}}</div>
+
+					</div>
+					<center class="spec">{{specialist}}</center>
+					<div class="detailInfoContainer">
+
+
+						{{#each address}}
+
+								<!-- <br><br><br> -->
+
+								{{#detailInfoItem value=tel key=(i18n 'Tel') }}
+									<a href="tel:{{tel}}">
+										<div class="icon">
+											<i class="fa fa-phone" style="font-size:1.5rem"></i>
+										</div>
+									</a>
+								{{/detailInfoItem}}
+
+								<!-- {{#detailInfoItem value=district key=(i18n 'District') }}   {{/detailInfoItem}} -->
+
+								{{#detailInfoItem class="address" latLng=(latLng) value=addressDoc key=(i18n 'Address') }}
+									<div class="icon">
+										<i class="fa fa-map-marker" style="font-size:1.5rem"></i>
+									</div>
+								{{/detailInfoItem}}
+
+								{{#detailInfoItem value=building key=(i18n 'Building') }}   {{/detailInfoItem}}
+
+								{{#unless allEmpty}}
+								<div class="detailInfoItem">
+										<div class="label">{{i18n 'OpeningHours'}}</div>
+										<div class="content">
+											<table class="openingtb">
+
+												{{#with Mon}}
+												<tr>
+													<td class="wd">Mon</td>
+													<td class="wdd">{{this}}</td>
+												</tr>
+												{{/with}}
+												{{#with Tue}}
+												<tr>
+													<td class="wd">Tue</td>
+													<td class="wdd">{{this}}</td>
+												</tr>
+												{{/with}}
+												{{#with Wed}}
+												<tr>
+													<td class="wd">Wed</td>
+													<td class="wdd">{{this}}</td>
+												</tr>
+												{{/with}}
+												{{#with Thur}}
+												<tr>
+													<td class="wd">Thur</td>
+													<td class="wdd">{{this}}</td>
+												</tr>
+												{{/with}}
+												{{#with Fri}}
+												<tr>
+													<td class="wd">Fri</td>
+													<td class="wdd">{{this}}</td>
+												</tr>
+												{{/with}}
+												{{#with Sat}}
+												<tr>
+													<td class="wd">Sat</td>
+													<td class="wdd">{{this}}</td>
+												</tr>
+												{{/with}}
+												{{#with Sun}}
+												<tr>
+													<td class="wd">Sun</td>
+													<td class="wdd">{{this}}</td>
+												</tr>
+												{{/with}}
+											</table>
+										</div>
+								</div>
+								{{/unless}}
+
+
+
+								<!-- {{#detailInfoItem value=fee key=(i18n 'fee') }}   {{/detailInfoItem}}
+								{{#detailInfoItem value=fee_remarks key=(i18n 'fee_remarks') }}   {{/detailInfoItem}}
+
+								{{#detailInfoItem value=opening_remarks key=(i18n 'OpeningHours') }}   {{/detailInfoItem}}
+								{{#detailInfoItem value=last_updated key=(i18n 'LastUpdated') }}   {{/detailInfoItem}} -->
+
+								<!-- <br> -->
+
+						{{/each}}
+
+						{{#detailInfoItem value=qualifications key=(i18n 'qualifications') }}   {{/detailInfoItem}}
+						<!-- {{#detailInfoItem value=lang key=(i18n 'lang') }}   {{/detailInfoItem}} -->
+						{{#detailInfoItem value=services key=(i18n 'services') }}   {{/detailInfoItem}}
+						{{#detailInfoItem value=hospitals key=(i18n 'hospitals') }}   {{/detailInfoItem}}
+
+
+						{{#if emergency_avail}}
+							<div class="detailInfoItem" style="border-bottom: 0;">
+									<div class="content">{{i18n 'emergency_avail'}}</div>
+									<div class="icon">
+										<i class="fa fa-check" style="font-size:1.5rem"></i>
+									</div>
+							</div>
+						{{/if}}
+
+
+					</div>
+				{{/with}}
+			</div>
+
+
+		{{/ionContent}}
+	{{/ionView}}
+</template>
+
+<!-- <div class="detailInfoItem">
+		<div class="label">Tel</div>
+		<div class="content">{{tel}}</div>
+		<div class="icon"></div>
+</div> -->
+
+<template name="detailInfoItem">
+	{{#if value}}
+	<div class="detailInfoItem {{class}}" >
+			<div class="label">{{key}}</div>
+			<div class="content">{{{value}}}</div>
+			<!-- <div class="icon"></div> -->
+			{{> UI.contentBlock}}
+	</div>
+	{{/if}}
+</template>

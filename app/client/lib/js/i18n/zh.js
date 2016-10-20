@@ -1,0 +1,40 @@
+i18n.map('zh', {
+  Settings:"設定",
+  Languages:"語言",
+  English:"English",
+  Chinese:"繁體中文",
+  //index
+  SPECIALIST:"專科",
+  DISTRICT:"地區",
+  PRACTIVE:"執業類別",
+  GENDER:"性別",
+  SEARCH:"搜尋",
+  MORE:"更多",
+  //tab
+  Search:"搜尋",
+  Nearby:"附近",
+  Favourite:"我的最愛",
+  Settings:"設定",
+  NoResult:"沒有結果",
+  Loading:"加載中...",
+  km:"公里",
+  result:"結果",
+  geoProblem:"地圖出現問題",
+  nofav:"暫沒有最愛的醫生",
+
+  //detail
+  Tel : "電話",
+  District : "地區",
+  Building : "大廈",
+  Address : "地址",
+  OpeningHours : "診症時間",
+  Remarks : "備註",
+  LastUpdated : "最後更新",
+  qualifications : "專業資格",
+  services : "提供的醫療服務",
+  fee : "收費",
+  fee_remarks : "診金備註",
+  lang:"語言",
+  hospitals:"醫院",
+  emergency_avail:"緊急服務"
+});

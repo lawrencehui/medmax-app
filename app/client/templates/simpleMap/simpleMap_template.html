@@ -1,0 +1,23 @@
+<template name='simpleMap'>
+	{{#contentFor "headerTitle"}}
+ 	 <h1 class="title">{{name}}</h1>
+  {{/contentFor}}
+
+	{{#contentFor "headerButtonLeft"}}
+	 {{>ionNavBackButton }}
+ 	{{/contentFor}}
+
+
+	{{#ionView}}
+			{{#ionContent}}
+
+			<div class="simpleMap">
+
+	      {{> googleMap name="exampleMap2" options=exampleMapOptions}}
+
+			</div>
+
+		{{/ionContent}}
+	{{/ionView}}
+
+</template>

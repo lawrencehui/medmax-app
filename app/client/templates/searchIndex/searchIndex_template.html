@@ -1,0 +1,16 @@
+<template name='searchIndex'>
+	{{#ionView}}
+    	{{#ionContent}}
+			<div class="searchIndex">
+				<div class="addpadding" style="background-color:#54BCD4;" ></div>
+				<button class="searchBtn" style="z-index:10; background-color:#54BCD4" data-type="SPECIALIST" ><div class="spec">{{i18n 'SPECIALIST'}}</div><div>{{getTypeValue "SPECIALIST"}}</div></button>
+				<button class="searchBtn" style="z-index:9; background-color:#5CCADD" data-type="DISTRICT" ><div class="spec">{{i18n 'DISTRICT'}}</div><div>{{getTypeValue "DISTRICT" }}</div></button>
+				<button class="searchBtn" style="z-index:8; background-color:#66D7E6" data-type="PRACTIVE" ><div class="spec">{{i18n 'PRACTIVE'}}</div><div>{{getTypeValue "PRACTIVE" }}</div></button>
+				<button class="searchBtn" style="z-index:7; background-color:#99E4EE" data-type="GENDER" ><div class="spec">{{i18n 'GENDER'}}</div><div>{{getTypeValue "GENDER" }}</div></button>
+				<div class="searchRsBtnContainer">
+					<button class="searchRsBtn"  >{{i18n 'SEARCH'}}</button>
+				</div>
+			</div>
+		{{/ionContent}}
+  {{/ionView}}
+</template>

@@ -1,0 +1,10 @@
+build
+.env
+node_modules
+config
+AppStore_com.sanuker.medmax.mobileprovision
+build.json
+address.csv
+doctors.csv
+medmax.jks
+medmax-dump

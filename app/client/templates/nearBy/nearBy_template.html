@@ -1,0 +1,24 @@
+<template name='nearBy'>
+
+	{{#contentFor "headerTitle"}}
+ 	 <h1 class="title">{{i18n 'Nearby'}}</h1>
+  {{/contentFor}}
+
+
+	{{#ionView}}
+			{{#ionContent}}
+
+			<div class="nearBy">
+
+			<!-- {{#unless geolocationError}} -->
+	      {{> googleMap name="exampleMap" options=exampleMapOptions}}
+	    <!-- {{else}}
+	      <center style="margin-top:20px">{{i18n geoProblem}}</center>
+	    {{/unless}} -->
+
+			</div>
+
+		{{/ionContent}}
+	{{/ionView}}
+
+</template>

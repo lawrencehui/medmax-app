@@ -1,0 +1,39 @@
+<template name="MasterLayout">
+  {{#ionBody}}
+    {{#unless isActiveRoute regex='searchIndex|searchCritria'}}
+      {{> ionNavBar class="bar-positive"}}
+    {{/unless}}
+    {{#ionNavView}}
+      {{> yield}}
+    {{/ionNavView}}
+
+    {{#unless isActiveRoute regex='searchRs|searchCritria|simpleMap'}}
+      {{> _tabs}}
+    {{/unless}}
+
+  {{/ionBody}}
+</template>
+
+<template name="_tabs">
+  <!-- {{#if isAndroid}}
+    {{#ionTabs style="android" class="tabs-background-positive tabs-color-light"}}
+      {{> ionTab title="Tab 1" path="tabs.one" icon="android-home"}}
+      {{> ionTab title="Tab 2" path="tabs.two" icon="android-star"}}
+      {{> ionTab title="Tab 3" path="tabs.three" icon="heart"}}
+      {{> ionTab title="Tab 4" path="tabs.four" icon="gear-b"}}
+    {{/ionTabs}}
+  {{else}}
+    {{#ionTabs style="ios"}}
+      {{> ionTab title="Tab 1" path="tabs.one" iconOff="ios-home-outline" iconOn="ios-home"}}
+      {{> ionTab title="Tab 2" path="tabs.two" iconOff="ios-star-outline" iconOn="ios-star"}}
+      {{> ionTab title="Tab 3" path="tabs.three" iconOff="ios-heart-outline" iconOn="ios-heart"}}
+      {{> ionTab title="Tab 4" path="tabs.four" iconOff="ios-gear-outline" iconOn="ios-gear"}}
+    {{/ionTabs}}
+  {{/if}} -->
+  {{#ionTabs style="ios"}}
+    {{> ionTab title=(i18n 'Search') fa="fa-search" path="searchIndex" iconOff="ios-home-outline" iconOn="ios-home"}}
+    {{> ionTab title=(i18n 'Nearby') fa="fa-map-marker" path="nearBy" iconOff="ios-star-outline" iconOn="ios-star"}}
+    {{> ionTab title=(i18n 'Favourite') fa="fa-star" path="favList" iconOff="ios-heart-outline" iconOn="ios-heart"}}
+    {{> ionTab title=(i18n 'Settings') fa="fa-cog" path="settings" iconOff="ios-gear-outline" iconOn="ios-gear"}}
+  {{/ionTabs}}
+</template>

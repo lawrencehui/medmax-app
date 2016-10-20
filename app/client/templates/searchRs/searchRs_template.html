@@ -1,0 +1,52 @@
+<template name='searchRs'>
+
+
+	{{#contentFor "headerButtonLeft"}}
+	 {{>ionNavBackButton path="searchIndex" }}
+ {{/contentFor}}
+ {{#contentFor "headerTitle"}}
+	 <h1 class="title">{{current}} / {{count}} {{i18n 'result'}}</h1>
+ {{/contentFor}}
+
+	{{#ionView}}
+		{{#ionContent}}
+
+			<div class="searchRs">
+				<div class="rsContainer" id="rsContainer">
+
+
+					{{#each rs}}
+						<div class="rsContainer-item" data-docid={{doc_id}} >
+							<img style="width:40px;margin-right:10px" src="/doctor_{{gender}}.png" alt="">
+							<div class="info" style="max-width:70%">
+								<div class="name">{{name}}</div>
+								<div>{{specialist}}</div>
+							</div>
+							<div class="distance">{{distance}}{{i18n 'km'}}</div>
+						</div>
+					{{/each}}
+
+
+					{{#unless isFinish}}
+						<center style="margin:10px 0">{{i18n 'Loading'}}</center>
+					{{else}}
+						{{#unless notEmpty}}
+							<center style="margin:10px 0">{{i18n 'NoResult'}}</center>
+						{{/unless}}
+					{{/unless}}
+
+					{{#if moreAva}}
+						{{#with rs}}
+						<button id="lastPt">
+							{{i18n 'MORE'}}
+						</button>
+						{{/with}}
+					{{/if}}
+
+				</div>
+			</div>
+
+	{{/ionContent}}
+{{/ionView}}
+
+</template>

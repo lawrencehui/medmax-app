@@ -1,0 +1,36 @@
+.searchCritria{
+  @extend %flex-column-container;
+  background-color: $theme-dark;
+  height: 100%;
+  .title{
+    height: 100px ;
+    width: 100%;
+    color: $theme-color-font;
+    letter-spacing: 5px;
+    font-weight: 500;
+  }
+
+  .titlelk{
+    flex-shrink: 0
+  }
+
+
+  .ItemContainer{
+
+    flex-grow: 1;
+    overflow-y: auto;
+    // @extend %flex-column-container;
+    &-item{
+      font-weight: 500;
+      letter-spacing: 2px;
+      color:$fontcolor;
+      padding: 15px 20px;
+      width: 100%;
+
+      &.active{
+        color: $theme-color-font;
+      }
+
+    }
+  }
+}

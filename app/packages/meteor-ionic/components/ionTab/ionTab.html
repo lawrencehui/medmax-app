@@ -1,0 +1,24 @@
+<template name="ionTab">
+  <a class="{{classes}} {{isActive}}" href="{{url}}" data-ion-tab style="display: flex; flex-direction: column; justify-content: center;">
+    <!-- {{#if defaultIcon}}
+      {{#if isActive}}
+        {{> ionIcon icon=activeIcon}}
+      {{else}}
+        {{> ionIcon icon=defaultIcon}}
+      {{/if}}
+    {{/if}} -->
+    <div>
+      <i class="fa {{fa}} {{#if isActive}}active{{/if}}" style="font-size:1.5rem"></i>
+    </div>
+
+    <div class="title {{#if isActive}}active{{/if}}">
+      {{title}}
+    </div>
+
+    {{#if badgeNumber}}
+      <div class="badge badge-{{badgeColor}}">
+        {{badgeNumber}}
+      </div>
+    {{/if}}
+  </a>
+</template>

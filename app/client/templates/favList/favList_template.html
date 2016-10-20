@@ -1,0 +1,43 @@
+<template name='favList'>
+	<!-- {{#contentFor "headerButtonLeft"}}
+	 {{>ionNavBackButton path="searchIndex"}}
+ {{/contentFor}} -->
+ {{#contentFor "headerTitle"}}
+	 <h1 class="title">{{i18n 'Favourite'}}</h1>
+ {{/contentFor}}
+
+		{{#ionView}}
+			{{#ionContent}}
+
+				<div class="searchRs">
+					<div class="rsContainer" id="rsContainer">
+						{{#if isfinish}}
+              {{#each rs}}
+                <div class="rsContainer-item" data-docid={{doc_id}} >
+
+                  <img style="width:40px;margin-right:10px" src="/doctor_{{gender}}.png" alt="">
+
+                  <div class="info">
+                    <div class="name">{{name}}</div>
+                    <!-- <div>{{en_name}}</div> -->
+                    <div>{{specialist}}</div>
+                  </div>
+
+
+                  <div class="distance">{{distance}}km</div>
+
+
+                </div>
+              {{else}}
+                <center style="margin-top:20px;">{{i18n 'nofav'}}</center>
+              {{/each}}
+            {{/if}}
+						<!-- <button id="lastPt">
+							more
+						</button> -->
+					</div>
+				</div>
+
+		{{/ionContent}}
+	{{/ionView}}
+</template>

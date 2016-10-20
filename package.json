@@ -1,0 +1,19 @@
+{
+  "name": "meddb-meteor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^2.3.0",
+    "eslint-config-airbnb": "6.1.0",
+    "eslint-plugin-meteor": "^3.0.2",
+    "eslint-plugin-react": "4.0.0",
+    "fixmyjs": "^1.0.3"
+  }
+}
